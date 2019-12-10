@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Post extends Migration
+class Patient extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class Post extends Migration
      */
     public function up()
     {
-        Schema::create('post', function (Blueprint $table) {
-            
+        Schema::create('patient', function (Blueprint $table) {
             $table->timestamps();
-			$table->bigIncrements('id');
-			$table->string('title')->nullable();
-			$table->string('content')->nullable();
-			$table->string('image')->nullable();
-			
+            $table->string('nik')->primary();
+			$table->string('name');
+			$table->string('address');
+			$table->string('blood');
         });
     }
 
@@ -31,6 +29,6 @@ class Post extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post');
+        Schema::dropIfExists('patient');
     }
 }

@@ -12,8 +12,9 @@ class AdminUsersController extends CBController {
         $this->setPageTitle("Users");
 
         $this->addText("Name","name")->strLimit(150)->maxLength(255);
-		$this->addEmail("Email","email");
-		$this->addSelectTable("Cb Role","cb_roles_id",["table"=>"cb_roles","value_option"=>"id","display_option"=>"name","sql_condition"=>""]);
+		$this->addText("Nik","nik")->strLimit(150)->maxLength(255);
+		$this->addText("Golongan Darah","blood")->strLimit(150)->maxLength(255);
+		$this->addSelectTable("Role","cb_roles_id",["table"=>"cb_roles","value_option"=>"id","display_option"=>"name","sql_condition"=>""]);
 		
 
     }
